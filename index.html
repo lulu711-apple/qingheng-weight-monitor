@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f4f1ea">
+  <meta name="description" content="轻衡：面向个人与校园场景的减重监测、饮食替代和健康习惯管理工具">
+  <meta http-equiv="Cache-Control" content="no-store">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="轻衡">
+  <link rel="manifest" href="manifest.webmanifest?v=1">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="stylesheet" href="styles.css?v=1">
+  <title>轻衡 · 减重监测</title>
+</head>
+<body>
+  <div class="app-frame">
+    <section class="auth-view" id="auth-view">
+      <div class="auth-brand">
+        <div class="logo-mark">轻</div>
+        <p class="eyebrow">QINGHENG HEALTH</p>
+        <h1>轻衡</h1>
+        <p>看见体重变化，也看见饮食、睡眠与运动习惯。</p>
+      </div>
+      <div class="auth-card" id="auth-card"></div>
+      <p class="local-note">本地优先 · 数据保存在当前浏览器 · 可导出备份</p>
+    </section>
+
+    <section class="app-view" id="app-view" hidden>
+      <header class="topbar">
+        <div>
+          <p class="eyebrow" id="today-label">TODAY</p>
+          <h1 id="greeting">你好</h1>
+        </div>
+        <button class="user-chip" id="user-menu" type="button" aria-label="打开用户设置">
+          <span id="user-initial">轻</span>
+          <small id="user-name-chip">用户</small>
+        </button>
+      </header>
+
+      <main id="view-root" class="view-root"></main>
+
+      <nav class="bottom-nav" aria-label="主导航">
+        <button class="nav-item is-active" type="button" data-view="home"><span>⌂</span><small>首页</small></button>
+        <button class="nav-item" type="button" data-view="records"><span>＋</span><small>记录</small></button>
+        <button class="nav-item" type="button" data-view="trends"><span>⌁</span><small>趋势</small></button>
+        <button class="nav-item" type="button" data-view="settings"><span>○</span><small>我的</small></button>
+      </nav>
+    </section>
+  </div>
+
+  <div class="modal" id="modal" hidden>
+    <section class="sheet" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="sheet-handle"></div>
+      <header class="sheet-header">
+        <div>
+          <p class="eyebrow" id="modal-kicker">QUICK LOG</p>
+          <h2 id="modal-title">记录</h2>
+        </div>
+        <button class="icon-button" id="modal-close" type="button" aria-label="关闭">×</button>
+      </header>
+      <div id="modal-body"></div>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js?v=1"></script>
+</body>
+</html>
